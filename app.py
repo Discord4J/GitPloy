@@ -6,7 +6,7 @@ from subprocess import call
 app = Flask(__name__)
 
 
-@app.route("/handle_webhook")
+@app.route("/handle_webhook", methods=["POST"])
 def handle():
     payload = request.json
     if 'master' in payload['ref']:
